@@ -1,0 +1,16 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    margin: 20px;
+    background-color: cyan;
+    font-size: xx-large;
+}
+
+input{
+    font-size: xx-large;
+}
+
+button{
+    font-size: large;
+    background-color: green;
+}
