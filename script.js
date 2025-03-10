@@ -16,7 +16,7 @@ document.getElementById("searchButton").addEventListener("click", async function
         const data = await response.json();
         const country = data[0];  
 
-        // Display country information
+        
         countryInfoSection.innerHTML = `
             <h2>${country.name.common}</h2>
             <p><strong>Capital:</strong> ${country.capital ? country.capital[0] : "N/A"}</p>
@@ -25,7 +25,7 @@ document.getElementById("searchButton").addEventListener("click", async function
             <img src="${country.flags.svg}" alt="Flag of ${country.name.common}">
         `;
 
-        // Display bordering countries
+        
         if (country.borders) {
             const borderResponse = await fetch(`https://restcountries.com/v3.1/alpha?codes=${country.borders.join(",")}`);
             const borderData = await borderResponse.json();
