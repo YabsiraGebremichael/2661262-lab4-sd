@@ -4,7 +4,7 @@ document.getElementById("btn").addEventListener("click", async function() {
     let y = document.getElementById("cStuff");
     let z = document.getElementById("bStuff");
 
-    if (x == "") {
+    if (x === "") {
         y.innerHTML = "<p>Please enter a country name.</p>";
         return;
     }
@@ -17,9 +17,9 @@ document.getElementById("btn").addEventListener("click", async function() {
 
         y.innerHTML = `
             <h2>${c.name.common}</h2>
-            <p><b>Capital:</b> ${c.capital ? c.capital[0] : "N/A"}</p>
-            <p><b>Population:</b> ${c.population.toLocaleString()}</p>
-            <p><b>Region:</b> ${c.region}</p>
+            <p><strong>Capital:</strong> ${c.capital ? c.capital[0] : "N/A"}</p>
+            <p><strong>Population:</strong> ${c.population.toLocaleString()}</p>
+            <p><strong>Region:</strong> ${c.region}</p>
             <img src="${c.flags.svg}" alt="Flag of ${c.name.common}">
         `;
 
@@ -35,11 +35,12 @@ document.getElementById("btn").addEventListener("click", async function() {
                 `;
             }
         } else {
-            z.innerHTML = "<p>No bordering countries.(</p>";
+            z.innerHTML = "<p>No bordering countries.</p>";
         }
     } catch (err) {
-        y.innerHTML = "<p>"err.message"</p>";
+        y.innerHTML = "<p>Error: " + err.message + "</p>";
         z.innerHTML = "";
     }
 });
+
 
